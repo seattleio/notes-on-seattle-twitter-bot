@@ -14,9 +14,11 @@ var slug = '8nakzyhuattzq7vp-21toq';
 
 flatsheet.sheet(slug, function (err, res) { 
   res.rows.forEach(function (row, i) {
-    if (!row.tweeted || row.tweeted !== 'true') {
-      res.rows[i].tweeted = 'true';
-      createTweet(row);
+    if (row.published === 'true') {
+      if (!row.tweeted || row.tweeted !== 'true') {
+        res.rows[i].tweeted = 'true';
+        createTweet(row);
+      }
     }
   });
 
