@@ -1,5 +1,5 @@
 var Twit = require('twit');
-var config = require('./config');
+var config = require('./config.js');
 var twitter = new Twit(config);
 var flatsheet = require('flatsheet')({
   token: process.env.FLATSHEET_TOKEN
